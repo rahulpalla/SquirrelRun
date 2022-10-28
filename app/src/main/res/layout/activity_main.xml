@@ -16,7 +16,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:text="Squirrel Run"
+<<<<<<< HEAD
         android:textColor="@color/white"
+=======
+>>>>>>> origin/main
         android:gravity="center"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
         app:layout_constraintEnd_toEndOf="parent"
