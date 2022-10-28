@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StartActivity">
+    tools:context=".StartActivity"
+    android:background="@drawable/background_home"
+    >
 
     <TextView
         android:id="@+id/app_name"
@@ -12,6 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:text="Squirrel Run"
+        android:textColor="@color/white"
         android:gravity="center"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,6 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:text="How to play"
+        android:textColor="@color/white"
         android:gravity="center"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,6 +42,7 @@
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
         android:text="Tap the screen to make the squirrel jump. Collect acorns and avoid the scary wolves."
+        android:textColor="@color/white"
         android:gravity="center"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
         app:layout_constraintEnd_toEndOf="parent"
