@@ -10,7 +10,20 @@
 
 
 
-    <TextView
+<!--    <TextView-->
+<!--        android:id="@+id/app_name"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="100dp"-->
+<!--        android:text="Squirrel Run"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:gravity="center"-->
+<!--        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+    <Button
         android:id="@+id/app_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,7 +34,7 @@
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
 
     <Button
