@@ -15,9 +15,12 @@ import android.view.WindowManager
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.animation.doOnEnd
+import androidx.core.animation.doOnStart
+import androidx.core.content.ContextCompat.startActivity
 import androidx.core.view.GestureDetectorCompat
 import com.example.squirrelrun.databinding.GamePageBinding
 import kotlinx.coroutines.NonCancellable.start
+import kotlin.properties.Delegates
 
 private const val DEBUG_TAG = "Gestures"
 
@@ -31,6 +34,7 @@ class GameActivity : AppCompatActivity() {
     private lateinit var squirrel: ImageView
     private lateinit var wolf: ImageView
     private lateinit var acorn: ImageView
+    private var isPlaying by Delegates.notNull<Boolean>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,13 +45,19 @@ class GameActivity : AppCompatActivity() {
         binding.homeBtn.setOnClickListener { launchHome() }
 
         mDetector = GestureDetectorCompat(this, MyGestureListener())
-
+        isPlaying = true;
         squirrel = findViewById(R.id.squirrel)
         wolf = findViewById(R.id.wolf)
         acorn = findViewById(R.id.acorn)
 
-        movingWolf()
+        playGame()
 
+    }
+
+    private fun playGame() {
+//        while (isPlaying) {
+            movingWolf()
+//        }
     }
     private fun launchSettings() {
         listIntent = Intent(this, SettingsActivity::class.java)
@@ -89,17 +99,17 @@ class GameActivity : AppCompatActivity() {
     }
 
     private fun movingWolf() {
-        //randomly pick a starting x-coord place and make the wolf appear there
-        //slide it till just past the squirrel and once it hits that x coor then make it disapear
-//        val animator = ObjectAnimator.ofFloat(wolf, View.TRANSLATION_X, -1000f)
+        //slides the wolf off the screen to the left
+        //how to get it to pop back up?
         val animator = ObjectAnimator.ofFloat(wolf, "translationX", -4000f).apply {
-            duration = 4000
+            duration = 6000
             start()
         }
-
-//        animator.repeatCount = 3
-        animator.doOnEnd { wolf.visibility = View.GONE }
-        disableDuringAnimation(animator)
+        animator.doOnStart { wolf.visibility = View.VISIBLE }
+        animator.doOnEnd {
+            wolf.visibility = View.GONE
+            animator.start()
+        }
         animator.start()
     }
 
