@@ -1,26 +1,25 @@
 package com.example.squirrelrun
 
+import android.R.attr.animation
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.animation.ObjectAnimator
-import android.app.Notification
+import android.animation.ValueAnimator
+import android.animation.ValueAnimator.AnimatorUpdateListener
 import android.content.Intent
-import android.graphics.Point
 import android.os.Bundle
 import android.util.Log
 import android.view.GestureDetector
 import android.view.MotionEvent
 import android.view.View
-import android.view.WindowManager
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.animation.doOnEnd
 import androidx.core.animation.doOnStart
-import androidx.core.content.ContextCompat.startActivity
 import androidx.core.view.GestureDetectorCompat
 import com.example.squirrelrun.databinding.GamePageBinding
-import kotlinx.coroutines.NonCancellable.start
 import kotlin.properties.Delegates
+
 
 private const val DEBUG_TAG = "Gestures"
 
@@ -57,6 +56,7 @@ class GameActivity : AppCompatActivity() {
     private fun playGame() {
 //        while (isPlaying) {
             movingWolf()
+            movingAcorn()
 //        }
     }
     private fun launchSettings() {
@@ -91,10 +91,35 @@ class GameActivity : AppCompatActivity() {
     }
 
     private fun jump() {
-        val animator = ObjectAnimator.ofFloat(squirrel, View.TRANSLATION_Y, -500f)
+//        val animator = ObjectAnimator.ofFloat(squirrel, View.TRANSLATION_Y, -500f)
+        val animator = ObjectAnimator.ofFloat(squirrel, "translationY", -600f).apply {
+            duration = 500
+            start()
+        }
         animator.repeatCount = 1
         animator.repeatMode = ObjectAnimator.REVERSE
         disableDuringAnimation(animator)
+        animator.start()
+    }
+
+    private fun movingAcorn() {
+        //slides the wolf off the screen to the left
+        //how to get it to pop back up?
+        val animator = ObjectAnimator.ofFloat(acorn, "translationX", -4000f).apply {
+            duration = 6000
+            start()
+        }
+        animator.addUpdateListener(AnimatorUpdateListener {
+            //Do collision detection here
+            if (squirrel.x == acorn.x && squirrel.y == acorn.y) {
+                acorn.visibility = View.GONE
+            }
+        })
+        animator.doOnStart { acorn.visibility = View.VISIBLE }
+        animator.doOnEnd {
+            acorn.visibility = View.GONE
+            animator.start()
+        }
         animator.start()
     }
 
@@ -105,6 +130,13 @@ class GameActivity : AppCompatActivity() {
             duration = 6000
             start()
         }
+        animator.repeatCount = ValueAnimator.INFINITE
+        animator.addUpdateListener(AnimatorUpdateListener {
+            //Do collision detection here
+            if (squirrel.x == wolf.x && squirrel.y == wolf.y) {
+                isPlaying = false
+            }
+        })
         animator.doOnStart { wolf.visibility = View.VISIBLE }
         animator.doOnEnd {
             wolf.visibility = View.GONE
