@@ -12,6 +12,7 @@ class SettingsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        supportActionBar?.hide()
         binding = SettingsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.gameBtn.setOnClickListener { launchStart() }

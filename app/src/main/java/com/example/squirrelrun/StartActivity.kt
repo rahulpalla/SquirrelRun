@@ -13,6 +13,7 @@ class StartActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        supportActionBar?.hide()
         binding = StartPageBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.startBtn.setOnClickListener { launchGame() }

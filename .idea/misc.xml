@@ -4,9 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.165" />
-        <entry key="app/src/main/res/layout/game_page.xml" value="0.12907608695652173" />
-        <entry key="app/src/main/res/layout/settings.xml" value="0.12907608695652173" />
-        <entry key="app/src/main/res/layout/start_page.xml" value="0.12907608695652173" />
+        <entry key="app/src/main/res/layout/game_page.xml" value="0.1571685791015625" />
+        <entry key="app/src/main/res/layout/settings.xml" value="0.31817215629245926" />
+        <entry key="app/src/main/res/layout/start_page.xml" value="0.22752990722656252" />
       </map>
     </option>
   </component>
