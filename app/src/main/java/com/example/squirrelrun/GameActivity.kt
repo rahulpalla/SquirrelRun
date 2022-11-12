@@ -8,6 +8,7 @@ import androidx.dynamicanimation.animation.DynamicAnimation
 import android.animation.ValueAnimator
 import android.animation.ValueAnimator.AnimatorUpdateListener
 import android.content.Intent
+import android.graphics.Rect
 import android.os.Bundle
 import android.renderscript.Sampler
 import android.util.Log
@@ -48,17 +49,19 @@ class GameActivity : AppCompatActivity() {
         binding.settingsBtn.setOnClickListener { launchSettings() }
         binding.homeBtn.setOnClickListener { launchHome() }
 
-        mDetector = GestureDetectorCompat(this, MyGestureListener())
-        isPlaying = true;
-        squirrel = findViewById(R.id.squirrel)
-        wolf = findViewById(R.id.wolf)
-        acorn = findViewById(R.id.acorn)
+        setContentView(GameView(this))
 
-        playGame()
-        while(!isPlaying) {
-            listIntent = Intent(this, MainActivity::class.java)
-            startActivity(listIntent)
-        }
+//        mDetector = GestureDetectorCompat(this, MyGestureListener())
+//        isPlaying = true;
+//        squirrel = findViewById(R.id.squirrel)
+//        wolf = findViewById(R.id.wolf)
+//        acorn = findViewById(R.id.acorn)
+//
+//        playGame()
+//        while(!isPlaying) {
+//            listIntent = Intent(this, MainActivity::class.java)
+//            startActivity(listIntent)
+//        }
     }
 
     private fun playGame() {
@@ -100,7 +103,7 @@ class GameActivity : AppCompatActivity() {
 
     private fun jump() {
 //        val animator = ObjectAnimator.ofFloat(squirrel, View.TRANSLATION_Y, -500f)
-        val animator = ObjectAnimator.ofFloat(squirrel, "translationY", -600f).apply {
+        val animator = ObjectAnimator.ofFloat(squirrel, "translationY", -500f).apply {
             duration = 500
             start()
         }
@@ -138,15 +141,15 @@ class GameActivity : AppCompatActivity() {
         //slides the wolf off the screen to the left
         //how to get it to pop back up?
         val animator = ObjectAnimator.ofFloat(wolf, "translationX", -5000f).apply {
-            duration = 6000
+            duration = 7000
             start()
         }
         animator.repeatCount = ValueAnimator.INFINITE
         animator.addUpdateListener(AnimatorUpdateListener {
             //Do collision detection here
-            if (squirrel.x - wolf.x <= 5.toFloat() && squirrel.y - wolf.y <= 5.toFloat()) {
-                Toast.makeText(applicationContext, "yooo", Toast.LENGTH_SHORT).show()
-            }
+//            if (squirrel.x - wolf.x <= 5.toFloat() && squirrel.y - wolf.y <= 5.toFloat()) {
+//                Toast.makeText(applicationContext, "yooo", Toast.LENGTH_SHORT).show()
+//            }
         })
         animator.doOnStart { wolf.visibility = View.VISIBLE }
         animator.doOnEnd {
