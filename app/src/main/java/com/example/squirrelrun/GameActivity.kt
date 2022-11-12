@@ -4,21 +4,26 @@ import android.R.attr.animation
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.animation.ObjectAnimator
+import androidx.dynamicanimation.animation.DynamicAnimation
 import android.animation.ValueAnimator
 import android.animation.ValueAnimator.AnimatorUpdateListener
 import android.content.Intent
 import android.os.Bundle
+import android.renderscript.Sampler
 import android.util.Log
 import android.view.GestureDetector
 import android.view.MotionEvent
 import android.view.View
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.animation.doOnEnd
 import androidx.core.animation.doOnStart
 import androidx.core.view.GestureDetectorCompat
 import com.example.squirrelrun.databinding.GamePageBinding
+import kotlinx.coroutines.NonCancellable.start
 import kotlin.properties.Delegates
+import kotlin.system.exitProcess
 
 
 private const val DEBUG_TAG = "Gestures"
@@ -33,7 +38,7 @@ class GameActivity : AppCompatActivity() {
     private lateinit var squirrel: ImageView
     private lateinit var wolf: ImageView
     private lateinit var acorn: ImageView
-    private var isPlaying by Delegates.notNull<Boolean>()
+    private var isPlaying: Boolean = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,7 +55,10 @@ class GameActivity : AppCompatActivity() {
         acorn = findViewById(R.id.acorn)
 
         playGame()
-
+        while(!isPlaying) {
+            listIntent = Intent(this, MainActivity::class.java)
+            startActivity(listIntent)
+        }
     }
 
     private fun playGame() {
@@ -114,6 +122,9 @@ class GameActivity : AppCompatActivity() {
             if (squirrel.x == acorn.x && squirrel.y == acorn.y) {
                 acorn.visibility = View.GONE
             }
+            if (squirrel.x - wolf.x == 500.toFloat() || squirrel.y - wolf.y == 200.toFloat()) {
+                isPlaying = false
+            }
         })
         animator.doOnStart { acorn.visibility = View.VISIBLE }
         animator.doOnEnd {
@@ -126,15 +137,15 @@ class GameActivity : AppCompatActivity() {
     private fun movingWolf() {
         //slides the wolf off the screen to the left
         //how to get it to pop back up?
-        val animator = ObjectAnimator.ofFloat(wolf, "translationX", -4000f).apply {
+        val animator = ObjectAnimator.ofFloat(wolf, "translationX", -5000f).apply {
             duration = 6000
             start()
         }
         animator.repeatCount = ValueAnimator.INFINITE
         animator.addUpdateListener(AnimatorUpdateListener {
             //Do collision detection here
-            if (squirrel.x == wolf.x && squirrel.y == wolf.y) {
-                isPlaying = false
+            if (squirrel.x - wolf.x <= 5.toFloat() && squirrel.y - wolf.y <= 5.toFloat()) {
+                Toast.makeText(applicationContext, "yooo", Toast.LENGTH_SHORT).show()
             }
         })
         animator.doOnStart { wolf.visibility = View.VISIBLE }
