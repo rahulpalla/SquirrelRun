@@ -55,9 +55,4 @@
         android:textSize="20sp"
         android:textColor="#ff914d"
         android:backgroundTint="#000000"/>
-
-
-
-    <!--        android:onClick="startGame"-->
-
 </LinearLayout>

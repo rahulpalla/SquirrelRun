@@ -10,7 +10,7 @@ public class Squirrel {
     Context context;
     Bitmap scaler;
     Bitmap squirrel;
-    int ox, oy;
+    int x, y;
     Random random;
 
     public Squirrel(Context context) {
@@ -18,8 +18,8 @@ public class Squirrel {
         scaler = BitmapFactory.decodeResource(context.getResources(), R.drawable.squirrel_img);
         squirrel = Bitmap.createScaledBitmap(scaler, 400, 400, false);
         random = new Random();
-        ox = random.nextInt(GameView.screenWidth);
-        oy = GameView.screenHeight - squirrel.getHeight();
+        x = random.nextInt(GameView.screenWidth);
+        y = GameView.screenHeight - squirrel.getHeight();
     }
 
     public Bitmap getSquirrel(){
