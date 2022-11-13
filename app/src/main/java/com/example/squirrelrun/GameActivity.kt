@@ -18,13 +18,6 @@ class GameActivity : AppCompatActivity() {
 
     private lateinit var binding: GamePageBinding
     private lateinit var listIntent: Intent
-    private lateinit var mDetector: GestureDetectorCompat
-
-    //    private lateinit var gameView: GameView
-    private lateinit var squirrel: ImageView
-    private lateinit var wolf: ImageView
-    private lateinit var acorn: ImageView
-    private var isPlaying: Boolean = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

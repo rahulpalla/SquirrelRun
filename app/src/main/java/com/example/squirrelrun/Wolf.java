@@ -8,7 +8,7 @@ public class Wolf {
     Bitmap wolf;
     Bitmap scaler;
     Context context;
-    int shx, shy;
+    int x, y;
 
     public Wolf(Context context, int shx, int shy) {
         this.context = context;
@@ -16,8 +16,8 @@ public class Wolf {
         scaler = BitmapFactory.decodeResource(context.getResources(), R.drawable.wolf);
 
         wolf = Bitmap.createScaledBitmap(scaler, 200, 200, false);
-        this.shx = shx;
-        this.shy = shy;
+        this.x = shx;
+        this.y = shy;
     }
     public Bitmap getShot(){
         return wolf;
