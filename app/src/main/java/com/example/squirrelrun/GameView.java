@@ -8,6 +8,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Point;
+import android.graphics.Typeface;
 import android.os.Handler;
 import android.view.Display;
 import android.view.MotionEvent;
@@ -55,9 +56,12 @@ public class GameView extends View {
         handler = new Handler();
         background = BitmapFactory.decodeResource(context.getResources(), R.drawable.background_home);
         scorePaint = new Paint();
-        scorePaint.setColor(Color.BLACK);
+        Typeface font = Typeface.createFromAsset(getContext().getAssets(), "fonts/sporto.ttf");
+        scorePaint.setTypeface(font);
+        scorePaint.setColor(Color.WHITE);
         scorePaint.setTextSize(TEXT_SIZE);
         scorePaint.setTextAlign(Paint.Align.LEFT);
+
     }
 
     @Override
