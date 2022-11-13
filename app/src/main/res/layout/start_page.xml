@@ -33,7 +33,7 @@
         android:id="@+id/tutorial"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tap the screen to make the squirrel jump. Collect acorns and avoid the scary wolves."
+        android:text="Move the squirrel to collect acorns and avoid the scary wolves."
         android:fontFamily="@font/snes"
         android:textSize="25sp"
         android:textColor="#ff914d"

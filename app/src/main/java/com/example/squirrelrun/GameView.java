@@ -100,22 +100,22 @@ public class GameView extends View {
             }
         }
 
-//        for (int i=0; i < acorns.size(); i++){
-//            acorns.get(i).y += 15;
-//            canvas.drawBitmap(acorns.get(i).getShot(), acorns.get(i).x, acorns.get(i).y, null);
-//            if ((acorns.get(i).x >= squirrel.x)
-//                    && acorns.get(i).x <= squirrel.x + squirrel.getWidth()
-//                    && acorns.get(i).y >= squirrel.y
-//                    && acorns.get(i).y <= screenHeight) {
-//                points++;
-//                acorns.remove(i);
-//            } else if (acorns.get(i).y >= screenHeight) {
-//                acorns.remove(i);
-//            }
-//            if (acorns.size() < 1){
-//                acornFalling = false;
-//            }
-//        }
+        for (int i=0; i < acorns.size(); i++){
+            acorns.get(i).y += 15;
+            canvas.drawBitmap(acorns.get(i).getShot(), acorns.get(i).x, acorns.get(i).y, null);
+            if ((acorns.get(i).x >= squirrel.x)
+                    && acorns.get(i).x <= squirrel.x + squirrel.getWidth()
+                    && acorns.get(i).y >= squirrel.y
+                    && acorns.get(i).y <= screenHeight) {
+                points++;
+                acorns.remove(i);
+            } else if (acorns.get(i).y >= screenHeight) {
+                acorns.remove(i);
+            }
+            if (acorns.size() < 1){
+                acornFalling = false;
+            }
+        }
 
         if (!paused)
             handler.postDelayed(runnable, 30);
