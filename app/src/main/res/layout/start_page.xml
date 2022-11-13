@@ -12,25 +12,41 @@
         android:id="@+id/app_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:text="Squirrel Run"
-        android:textColor="@color/white"
+        android:layout_marginTop="4dp"
         android:gravity="center"
+        android:text="Squirrel Run"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+    <!--    <ImageView-->
+<!--        android:id="@+id/squirrel"-->
+<!--        android:layout_width="112dp"-->
+<!--        android:layout_height="94dp"-->
+<!--        android:layout_marginTop="5dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="@+id/start_btn"-->
+<!--        app:layout_constraintHorizontal_bias="0.499"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintRight_toRightOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/tutorial"-->
+<!--        app:layout_constraintVertical_bias="0.0"-->
+<!--        tools:srcCompat="@drawable/squirrel_img" />-->
 
     <TextView
         android:id="@+id/how_to_play"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="How to play"
-        android:textColor="@color/white"
+        android:layout_marginTop="28dp"
         android:gravity="center"
+        android:text="How to play"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/app_name" />
 
@@ -38,39 +54,27 @@
         android:id="@+id/tutorial"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
         android:layout_marginStart="50dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="50dp"
-        android:text="Tap the screen to make the squirrel jump. Collect acorns and avoid the scary wolves."
-        android:textColor="@color/white"
         android:gravity="center"
+        android:text="Tap the screen to make the squirrel jump. Collect acorns and avoid the scary wolves."
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/how_to_play" />
-
-
-    <ImageView
-        android:id="@+id/squirrel"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.703"
-        tools:srcCompat="@drawable/squirrel_img" />
 
     <Button
         android:id="@+id/start_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/tutorial"
+        android:layout_marginTop="52dp"
         android:text="start game"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="200dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tutorial" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
