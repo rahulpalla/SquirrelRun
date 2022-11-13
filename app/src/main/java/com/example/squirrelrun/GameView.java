@@ -56,7 +56,7 @@ public class GameView extends View {
         handler = new Handler();
         background = BitmapFactory.decodeResource(context.getResources(), R.drawable.background_home);
         scorePaint = new Paint();
-        Typeface font = Typeface.createFromAsset(getContext().getAssets(), "fonts/sporto.ttf");
+        Typeface font = Typeface.createFromAsset(getContext().getAssets(), "font/sporto.ttf");
         scorePaint.setTypeface(font);
         scorePaint.setColor(Color.WHITE);
         scorePaint.setTextSize(TEXT_SIZE);
