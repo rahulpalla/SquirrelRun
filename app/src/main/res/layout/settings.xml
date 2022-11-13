@@ -1,52 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SettingsActivity"
-    android:background="@drawable/background_home"
-    >
-
-    <!--    <TextView-->
-<!--        android:id="@+id/opt1_setting"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="50dp"-->
-<!--        android:layout_marginStart="100dp"-->
-<!--        android:text="Option 1"-->
-<!--        android:gravity="left"-->
-<!--        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/setting_title" />-->
-
-
-<!--    <Button-->
-<!--        android:id="@+id/opt1_btn"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/setting_title"-->
-<!--        android:text="opt1"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        android:layout_marginTop="40dp"-->
-<!--        android:layout_marginEnd="50dp"-->
-<!--        android:layout_marginStart="260dp"/>-->
-
-    <TextView
+    android:orientation="vertical"
+    android:background="#50C878"
+    android:gravity="center">
+    <Button
         android:id="@+id/setting_title"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:gravity="center"
         android:text="Settings"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline3"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:fontFamily="@font/sporto"
+        android:textSize="33sp"
+        android:textColor="#ff914d"
+        android:backgroundTint="#000000"/>
 
     <com.google.android.material.switchmaterial.SwitchMaterial
         android:id="@+id/option1_setting"
@@ -56,7 +26,7 @@
         android:checked="true"
         android:text="Dark Mode"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -70,7 +40,7 @@
         android:checked="true"
         android:text="Audio"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
@@ -84,7 +54,7 @@
         android:checked="true"
         android:text="Change to Spanish"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
@@ -94,12 +64,11 @@
         android:id="@+id/game_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:gravity="center"
-        android:text="Play Game"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/option3_setting" />
+        android:text="Start"
+        android:fontFamily="@font/sporto"
+        android:textSize="25sp"
+        android:textColor="#ff914d"
+        android:backgroundTint="#000000" />
 
     <Button
             android:id="@+id/home_btn"
@@ -107,8 +76,9 @@
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@+id/game_btn"
             android:text="Home"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:gravity="center"/>
+        android:fontFamily="@font/sporto"
+        android:textSize="25sp"
+        android:textColor="#ff914d"
+        android:backgroundTint="#000000"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

@@ -1,26 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".StartActivity"
+    android:orientation="vertical"
     android:background="@drawable/background_home"
+    android:gravity="center"
     >
 
-    <TextView
+    <Button
         android:id="@+id/app_name"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:gravity="center"
         android:text="Squirrel Run"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:fontFamily="@font/sporto"
+        android:textSize="33sp"
+        android:textColor="#ff914d"
+        android:backgroundTint="#000000"/>
 
 
     <!--    <ImageView-->
@@ -36,45 +34,35 @@
 <!--        app:layout_constraintVertical_bias="0.0"-->
 <!--        tools:srcCompat="@drawable/squirrel_img" />-->
 
-    <TextView
+    <Button
         android:id="@+id/how_to_play"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:gravity="center"
-        android:text="How to play"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/app_name" />
+        android:text="How to Play:"
+        android:fontFamily="@font/snes"
+        android:textSize="35sp"
+        android:textColor="#ff914d"
+        android:backgroundTint="#000000" />
 
-    <TextView
+    <Button
         android:id="@+id/tutorial"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="50dp"
-        android:gravity="center"
         android:text="Tap the screen to make the squirrel jump. Collect acorns and avoid the scary wolves."
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/how_to_play" />
+        android:fontFamily="@font/snes"
+        android:textSize="25sp"
+        android:textColor="#ff914d"
+        android:backgroundTint="#000000" />
 
     <Button
         android:id="@+id/start_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:text="start game"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tutorial" />
+        android:text="Start Game"
+        android:fontFamily="@font/sporto"
+        android:textSize="20sp"
+        android:textColor="#ff914d"
+        android:backgroundTint="#000000" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
