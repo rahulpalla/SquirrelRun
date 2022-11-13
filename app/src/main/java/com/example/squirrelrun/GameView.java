@@ -87,7 +87,6 @@ public class GameView extends View {
 //            ((Activity) context).finish();
 //        }
 
-        // Till enemyShotAction is false, enemy should fire shots from random travelled distance
         if (wolfFalling == false) {
             Wolf wolf = new Wolf(context, random.nextInt(1200), 0);
             wolves.add(wolf);
@@ -100,7 +99,6 @@ public class GameView extends View {
             acornFalling = true;
         }
 
-        // Draw our Spaceship
         canvas.drawBitmap(squirrel.getSquirrel(), squirrel.ox, squirrel.oy, null);
 
         for(int i=0; i < wolves.size(); i++){
@@ -111,6 +109,14 @@ public class GameView extends View {
                     && wolves.get(i).shy >= squirrel.oy
                     && wolves.get(i).shy <= screenHeight){
                 life--;
+                if(life == 0){
+                    paused = true;
+                    handler = null;
+                    Intent intent = new Intent(context, GameOverActivity.class);
+                    intent.putExtra("points", points);
+                    context.startActivity(intent);
+                    ((Activity) context).finish();
+                }
                 wolves.remove(i);
             }else if(wolves.get(i).shy >= screenHeight){
                 wolves.remove(i);

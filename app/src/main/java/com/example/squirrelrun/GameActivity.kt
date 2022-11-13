@@ -51,17 +51,6 @@ class GameActivity : AppCompatActivity() {
 
         setContentView(GameView(this))
 
-//        mDetector = GestureDetectorCompat(this, MyGestureListener())
-//        isPlaying = true;
-//        squirrel = findViewById(R.id.squirrel)
-//        wolf = findViewById(R.id.wolf)
-//        acorn = findViewById(R.id.acorn)
-//
-//        playGame()
-//        while(!isPlaying) {
-//            listIntent = Intent(this, MainActivity::class.java)
-//            startActivity(listIntent)
-//        }
     }
 
     private fun playGame() {
