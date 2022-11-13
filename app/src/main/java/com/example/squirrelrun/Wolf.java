@@ -4,8 +4,6 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
-import java.util.Random;
-
 public class Wolf {
     Bitmap wolf;
     Bitmap scaler;
@@ -14,8 +12,7 @@ public class Wolf {
 
     public Wolf(Context context, int shx, int shy) {
         this.context = context;
-        Random rand = new Random();
-        int type = rand.nextInt(2);
+
         scaler = BitmapFactory.decodeResource(context.getResources(), R.drawable.wolf);
 
         wolf = Bitmap.createScaledBitmap(scaler, 200, 200, false);
