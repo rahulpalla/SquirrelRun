@@ -12,8 +12,8 @@ public class Wolf {
 
     public Wolf(Context context, int shx, int shy) {
         this.context = context;
+        scaler = BitmapFactory.decodeResource(context.getResources(), R.drawable.wolf2);
 
-        scaler = BitmapFactory.decodeResource(context.getResources(), R.drawable.wolf);
 
         wolf = Bitmap.createScaledBitmap(scaler, 200, 200, false);
         this.x = shx;

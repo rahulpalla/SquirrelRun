@@ -15,7 +15,7 @@ public class Squirrel {
 
     public Squirrel(Context context) {
         this.context = context;
-        scaler = BitmapFactory.decodeResource(context.getResources(), R.drawable.squirrel2);
+        scaler = BitmapFactory.decodeResource(context.getResources(), R.drawable.squirrel_img);
         squirrel = Bitmap.createScaledBitmap(scaler, 400, 400, false);
         random = new Random();
         x = random.nextInt(GameView.screenWidth);

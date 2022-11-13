@@ -16,7 +16,11 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="20dp"
         android:layout_marginTop="200dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        android:fontFamily="@font/sporto"
+        android:textSize="10sp"
+        android:textColor="#ff914d"
+        android:backgroundTint="#000000"/>
 
     <Button
         android:id="@+id/home_btn"
@@ -26,7 +30,11 @@
         app:layout_constraintTop_toBottomOf="@id/settings_btn"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="20dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        android:fontFamily="@font/sporto"
+        android:textSize="10sp"
+        android:textColor="#ff914d"
+        android:backgroundTint="#000000"/>
 
     <ImageView
         android:id="@+id/acorn"
@@ -49,7 +57,7 @@
         android:layout_marginRight="-130dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.805"
-        app:srcCompat="@drawable/wolf" />
+        app:srcCompat="@drawable/wolf2" />
 
     <ImageView
         android:id="@+id/squirrel"
@@ -61,7 +69,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.766"
-        app:srcCompat="@drawable/squirrel2" />
+        app:srcCompat="@drawable/squirrel_img" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
