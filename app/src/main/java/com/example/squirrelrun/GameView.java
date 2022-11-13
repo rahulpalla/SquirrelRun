@@ -2,7 +2,6 @@ package com.example.squirrelrun;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -24,7 +23,7 @@ public class GameView extends View {
     long UPDATE_MILLIS = 30;
     static int screenWidth, screenHeight;
     int points = 0;
-    int life = 3;
+    boolean isPlaying = true;
     Paint scorePaint;
     int TEXT_SIZE = 100;
     boolean paused = false;
@@ -62,7 +61,7 @@ public class GameView extends View {
 //        enemySpaceship = new EnemySpaceship(context);
         handler = new Handler();
         background = BitmapFactory.decodeResource(context.getResources(), R.drawable.background_home);
-        lifeImage = BitmapFactory.decodeResource(context.getResources(), R.drawable.life);
+//        lifeImage = BitmapFactory.decodeResource(context.getResources(), R.drawable.life);
         scorePaint = new Paint();
         scorePaint.setColor(Color.BLACK);
         scorePaint.setTextSize(TEXT_SIZE);
@@ -74,8 +73,12 @@ public class GameView extends View {
         // Draw background, Points and life on Canvas
         canvas.drawBitmap(background, 0, 0, null);
         canvas.drawText("Pt: " + points, 0, TEXT_SIZE, scorePaint);
-        for(int i=life; i>=1; i--){
-            canvas.drawBitmap(lifeImage, screenWidth - lifeImage.getWidth() * i, 0, null);
+//        for(int i=life; i>=1; i--){
+//            canvas.drawBitmap(lifeImage, screenWidth - lifeImage.getWidth() * i, 0, null);
+//        }
+
+        if (!isPlaying) {
+            //launch game over screen
         }
         // When life becomes 0, stop game and launch GameOver Activity with points
 //        if(life == 0){
@@ -103,16 +106,16 @@ public class GameView extends View {
         // Draw our Spaceship
         canvas.drawBitmap(squirrel.getSquirrel(), squirrel.ox, squirrel.oy, null);
 
-        for(int i=0; i < wolves.size(); i++){
+        for (int i=0; i < wolves.size(); i++){
             wolves.get(i).shy += 15;
             canvas.drawBitmap(wolves.get(i).getShot(), wolves.get(i).shx, wolves.get(i).shy, null);
-            if((wolves.get(i).shx >= squirrel.ox)
+            if ((wolves.get(i).shx >= squirrel.ox)
                     && wolves.get(i).shx <= squirrel.ox + squirrel.getWidth()
                     && wolves.get(i).shy >= squirrel.oy
                     && wolves.get(i).shy <= screenHeight){
-                life--;
+                isPlaying = false;
                 wolves.remove(i);
-            }else if(wolves.get(i).shy >= screenHeight){
+            } else if(wolves.get(i).shy >= screenHeight){
                 wolves.remove(i);
             }
             if(wolves.size() < 1){
@@ -120,27 +123,27 @@ public class GameView extends View {
             }
         }
 
-        for(int i=0; i < acorns.size(); i++){
-            acorns.get(i).shy += 15;
-            canvas.drawBitmap(acorns.get(i).getShot(), acorns.get(i).shx, acorns.get(i).shy, null);
-            if ((acorns.get(i).shx >= squirrel.ox)
-                    && acorns.get(i).shx <= squirrel.ox + squirrel.getWidth()
-                    && acorns.get(i).shy >= squirrel.oy
-                    && acorns.get(i).shy <= screenHeight) {
-                points++;
-                acorns.remove(i);
-            } else if (acorns.get(i).shy >= screenHeight) {
-                acorns.remove(i);
-            }
-            if(acorns.size() < 1){
-                acornFalling = false;
-            }
-        }
+//        for (int i=0; i < acorns.size(); i++){
+//            acorns.get(i).shy += 15;
+//            canvas.drawBitmap(acorns.get(i).getShot(), acorns.get(i).shx, acorns.get(i).shy, null);
+//            if ((acorns.get(i).shx >= squirrel.ox)
+//                    && acorns.get(i).shx <= squirrel.ox + squirrel.getWidth()
+//                    && acorns.get(i).shy >= squirrel.oy
+//                    && acorns.get(i).shy <= screenHeight) {
+//                points++;
+//                acorns.remove(i);
+//            } else if (acorns.get(i).shy >= screenHeight) {
+//                acorns.remove(i);
+//            }
+//            if (acorns.size() < 1){
+//                acornFalling = false;
+//            }
+//        }
 
         // If not paused, we’ll call the postDelayed() method on handler object which will cause the
         // run method inside Runnable to be executed after 30 milliseconds, that is the value inside
         // UPDATE_MILLIS.
-        if(!paused)
+        if (!paused)
             handler.postDelayed(runnable, UPDATE_MILLIS);
     }
 

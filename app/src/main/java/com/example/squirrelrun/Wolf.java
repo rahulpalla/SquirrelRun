@@ -18,7 +18,7 @@ public class Wolf {
         int type = rand.nextInt(2);
         scaler = BitmapFactory.decodeResource(context.getResources(), R.drawable.wolf);
 
-        wolf = Bitmap.createScaledBitmap(scaler, 150, 150, false);
+        wolf = Bitmap.createScaledBitmap(scaler, 200, 200, false);
         this.shx = shx;
         this.shy = shy;
     }
