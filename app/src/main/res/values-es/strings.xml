@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings">adjustes</string>
+    <string name="play_again">Juega de nuevo?</string>
+    <string name="home">Casa</string>
+    <string name="dark_mode">Modo oscuro</string>
+    <string name="change_to_spanish">"Cambiar a español "</string>
+    <string name="play_game">Juega de nuevo?</string>
+    <string name="how_to_play">Cómo jugar</string>
+    <string name="how_description">"Arrastra la pantalla para hacer que la ardilla se mueva. Recoge bellotas y evita a los temibles lobos. "</string>
+    <string name="start_game">Empezar juego</string>
+    <string name="play">Jugar</string>
+    <string name="game_over">Juego terminado</string>
+</resources>

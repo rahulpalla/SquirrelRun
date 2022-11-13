@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         android:gravity="center"
-        android:text="Squirrel Run"
+        android:text="@string/squirrel_run"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,7 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/app_name"
-        android:text="play"
+        android:text="@string/play"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="30dp"/>
@@ -38,7 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/play_btn"
-        android:text="settings"
+        android:text="@string/settings"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="30dp"/>
