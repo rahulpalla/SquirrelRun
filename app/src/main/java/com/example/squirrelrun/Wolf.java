@@ -12,10 +12,10 @@ public class Wolf {
 
     public Wolf(Context context, int shx, int shy) {
         this.context = context;
-        scaler = BitmapFactory.decodeResource(context.getResources(), R.drawable.wolf2);
+        scaler = BitmapFactory.decodeResource(context.getResources(), R.drawable.acorn_img);
 
 
-        wolf = Bitmap.createScaledBitmap(scaler, 350, 350, false);
+        wolf = Bitmap.createScaledBitmap(scaler, 150, 150, false);
         this.x = shx;
         this.y = shy;
     }

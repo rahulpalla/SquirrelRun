@@ -13,7 +13,7 @@ public class Acorn {
     public Acorn(Context context, int otherx, int othery) {
         this.context = context;
         scaler = BitmapFactory.decodeResource(context.getResources(),
-                R.drawable.acorn_img);
+                R.drawable.wolf2);
         acorn = Bitmap.createScaledBitmap(scaler, 150, 150, false);
         this.x = otherx;
         this.y = othery;
