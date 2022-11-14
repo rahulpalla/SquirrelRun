@@ -2,10 +2,13 @@ package com.example.squirrelrun
 
 import android.app.Activity
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.speech.RecognizerIntent
 import android.widget.Toast
+import androidx.core.app.ActivityCompat.startActivityForResult
+import androidx.core.content.ContextCompat.startActivity
 import com.example.squirrelrun.databinding.ActivityMainBinding
 
 private const val SPEECH_REQUEST_CODE = 0
@@ -23,6 +26,7 @@ class MainActivity : AppCompatActivity() {
         binding.playBtn.setOnClickListener { launchStart() }
         binding.settingBtn.setOnClickListener { launchSettings() }
         binding.voiceBtn.setOnClickListener { displaySpeechRecognizer() }
+
     }
     private fun launchStart() {
         listIntent = Intent(this, StartActivity::class.java)

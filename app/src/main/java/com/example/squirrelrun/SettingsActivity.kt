@@ -25,12 +25,6 @@ class SettingsActivity : AppCompatActivity() {
             launchLauncher(webIntent)
         }}
 
-
-//    private fun openWeb() {
-//        val webIntent: Intent = Uri.parse("https://docs.google.com/forms/d/e/1FAIpQLScvEchFvcV3nsaqBkX5kmHwAz1ZNGmEJlh5lOoZZ8eqr4F3PA/viewform?usp=sf_link").let { webpage ->
-//            Intent(Intent.ACTION_VIEW, webpage)
-//        }
-//    }
     private fun launchLauncher(webIntent: Intent) {
         startActivity(webIntent)
     }

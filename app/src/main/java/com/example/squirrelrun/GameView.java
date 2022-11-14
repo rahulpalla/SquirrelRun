@@ -107,7 +107,6 @@ public class GameView extends View {
                     Intent intent = new Intent(context, GameOverActivity.class);
                     intent.putExtra("points", points);
                     context.startActivity(intent);
-//                    context.startActivity(intent);
                     ((Activity) context).finish();
 
 
