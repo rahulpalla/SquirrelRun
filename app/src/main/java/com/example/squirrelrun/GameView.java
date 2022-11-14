@@ -60,6 +60,7 @@ public class GameView extends View {
         scorePaint.setColor(Color.BLACK);
         scorePaint.setTextSize(TEXT_SIZE);
         scorePaint.setTextAlign(Paint.Align.LEFT);
+
     }
 
     @Override
