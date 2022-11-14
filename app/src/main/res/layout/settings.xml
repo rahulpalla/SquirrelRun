@@ -58,7 +58,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/option2_setting" />
+        app:layout_constraintTop_toBottomOf="@id/setting_title" />
 
     <Button
         android:id="@+id/game_btn"
