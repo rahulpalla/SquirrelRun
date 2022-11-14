@@ -71,11 +71,28 @@
         android:backgroundTint="#000000" />
 
     <Button
-            android:id="@+id/home_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/game_btn"
-            android:text="Home"
+        android:id="@+id/home_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Home"
+        android:fontFamily="@font/sporto"
+        android:textSize="25sp"
+        android:textColor="#ff914d"
+        android:backgroundTint="#000000"/>
+<!--    <Button-->
+<!--        android:id="@+id/form_btn"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Feedback"-->
+<!--        android:fontFamily="@font/sporto"-->
+<!--        android:textSize="25sp"-->
+<!--        android:textColor="#ff914d"-->
+<!--        android:backgroundTint="#000000"/>-->
+    <Button
+        android:id="@+id/feedback_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/feedback_link"
         android:fontFamily="@font/sporto"
         android:textSize="25sp"
         android:textColor="#ff914d"

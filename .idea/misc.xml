@@ -6,7 +6,7 @@
         <entry key="app/src/main/res/drawable/green_background.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="app/src/main/res/layout/game_page.xml" value="0.22" />
-        <entry key="app/src/main/res/layout/settings.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/settings.xml" value="0.2676767676767677" />
         <entry key="app/src/main/res/layout/start_page.xml" value="0.165" />
       </map>
     </option>
@@ -16,5 +16,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.2857528686523438" />
+      </ProjectState>
+    </option>
   </component>
 </project>
