@@ -18,25 +18,28 @@
         android:textSize="33sp"
         android:textColor="#ff914d"
         android:backgroundTint="#000000"/>
+
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/squirrel_img"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
         android:adjustViewBounds="true"
         android:maxWidth="100dp"
         android:maxHeight="100dp"
         android:scaleType="fitCenter"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="40dp" />
+        app:srcCompat="@drawable/squirrel_img" />
+
     <Button
         android:id="@+id/play_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Start"
+        android:backgroundTint="#000000"
         android:fontFamily="@font/sporto"
-        android:textSize="20sp"
+        android:text="Start"
         android:textColor="#ff914d"
-        android:backgroundTint="#000000"/>
+        android:textSize="20sp" />
+
     <Button
         android:id="@+id/setting_btn"
         android:layout_width="wrap_content"

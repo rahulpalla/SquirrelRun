@@ -2,6 +2,7 @@ package com.example.squirrelrun;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -21,6 +22,7 @@ public class GameView extends View {
     Handler handler;
     static int screenWidth, screenHeight;
     int points = 0;
+    int life = 1;
     boolean isPlaying = true;
     Paint scorePaint;
     int TEXT_SIZE = 100;
@@ -66,9 +68,15 @@ public class GameView extends View {
         canvas.drawBitmap(background, 0, 0, null);
         canvas.drawText("Points: " + points, 0, TEXT_SIZE, scorePaint);
 
-        if (!isPlaying) {
-            //launch game over screen
-        }
+//        if (!isPlaying) {
+//            //launch game over screen
+//            paused = true;
+//            handler = null;
+//            Intent intent = new Intent(context, GameOverActivity.class);
+//            intent.putExtra("points", points);
+//            context.startActivity(intent);
+//            ((Activity) context).finish();
+//        }
 
         if (wolfFalling == false) {
             Wolf wolf = new Wolf(context, random.nextInt(1200), 0);
@@ -91,7 +99,15 @@ public class GameView extends View {
                     && wolves.get(i).x <= squirrel.x + squirrel.getWidth()
                     && wolves.get(i).y >= squirrel.y
                     && wolves.get(i).y <= screenHeight){
-                isPlaying = false;
+
+                    //launch game over screen
+                    paused = true;
+                    handler = null;
+                    Intent intent = new Intent(context, GameOverActivity.class);
+                    intent.putExtra("points", points);
+                    context.startActivity(intent);
+                    ((Activity) context).finish();
+
                 wolves.remove(i);
             } else if(wolves.get(i).y >= screenHeight){
                 wolves.remove(i);
@@ -101,22 +117,22 @@ public class GameView extends View {
             }
         }
 
-//        for (int i=0; i < acorns.size(); i++){
-//            acorns.get(i).y += 15;
-//            canvas.drawBitmap(acorns.get(i).getShot(), acorns.get(i).x, acorns.get(i).y, null);
-//            if ((acorns.get(i).x >= squirrel.x)
-//                    && acorns.get(i).x <= squirrel.x + squirrel.getWidth()
-//                    && acorns.get(i).y >= squirrel.y
-//                    && acorns.get(i).y <= screenHeight) {
-//                points++;
-//                acorns.remove(i);
-//            } else if (acorns.get(i).y >= screenHeight) {
-//                acorns.remove(i);
-//            }
-//            if (acorns.size() < 1){
-//                acornFalling = false;
-//            }
-//        }
+        for (int i=0; i < acorns.size(); i++){
+            acorns.get(i).y += 15;
+            canvas.drawBitmap(acorns.get(i).getShot(), acorns.get(i).x, acorns.get(i).y, null);
+            if ((acorns.get(i).x >= squirrel.x)
+                    && acorns.get(i).x <= squirrel.x + squirrel.getWidth()
+                    && acorns.get(i).y >= squirrel.y
+                    && acorns.get(i).y <= screenHeight) {
+                points++;
+                acorns.remove(i);
+            } else if (acorns.get(i).y >= screenHeight) {
+                acorns.remove(i);
+            }
+            if (acorns.size() < 1){
+                acornFalling = false;
+            }
+        }
 
         if (!paused)
             handler.postDelayed(runnable, 30);
