@@ -15,11 +15,13 @@
         android:gravity="center"
         android:text="GAME OVER"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline3"
-        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:fontFamily="@font/sporto"
+        android:textSize="25sp"
+        android:textColor="#ff914d"/>
 
     <ImageView
         android:id="@+id/wolf"
@@ -27,25 +29,25 @@
         android:layout_height="280dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.086"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/wolf2" />
 
     <TextView
         android:id="@+id/points"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="260dp"
+        android:layout_marginTop="-80dp"
         android:textSize="30dp"
         android:text="@string/points"
         android:gravity="center"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline3"
-        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@+id/wolf"
+        android:textColor="#000000"/>
 
     <Button
         android:id="@+id/play_game_btn"
@@ -55,6 +57,23 @@
         android:text="Play Again"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:fontFamily="@font/sporto"
+        android:textSize="25sp"
+        android:textColor="#ff914d"
+        android:backgroundTint="#000000"/>
+
+    <Button
+        android:id="@+id/home_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Home"
+        android:fontFamily="@font/sporto"
+        android:textSize="25sp"
+        android:textColor="#ff914d"
+        android:backgroundTint="#000000"
+        app:layout_constraintTop_toBottomOf="@+id/play_game_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
