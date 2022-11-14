@@ -15,7 +15,7 @@ public class Wolf {
         scaler = BitmapFactory.decodeResource(context.getResources(), R.drawable.wolf2);
 
 
-        wolf = Bitmap.createScaledBitmap(scaler, 400, 400, false);
+        wolf = Bitmap.createScaledBitmap(scaler, 350, 350, false);
         this.x = shx;
         this.y = shy;
     }

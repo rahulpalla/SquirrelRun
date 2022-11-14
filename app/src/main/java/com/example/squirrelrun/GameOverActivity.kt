@@ -17,12 +17,17 @@ class GameOverActivity : AppCompatActivity() {
         binding = GameOverBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.playGameBtn.setOnClickListener { launchGame() }
-        val point = listIntent?.getIntExtra("points", 0)
-        binding.points.text = resources.getString(point, "Points:")
+        binding.homeBtn.setOnClickListener { launchMain() }
+        val point = intent.getIntExtra("points", 0)
+        binding.points.text = resources.getString(R.string.points, point)
 
     }
     private fun launchGame() {
         listIntent = Intent(this, GameActivity::class.java)
+        startActivity(listIntent)
+    }
+    private fun launchMain() {
+        listIntent = Intent(this, MainActivity::class.java)
         startActivity(listIntent)
     }
 }

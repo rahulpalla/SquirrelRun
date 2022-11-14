@@ -101,15 +101,13 @@ public class GameView extends View {
                     && wolves.get(i).y <= screenHeight){
                 isPlaying = false;
 
-                    //launch game over screen
-                    paused = true;
-                    handler = null;
-                    Intent intent = new Intent(context, GameOverActivity.class);
-                    intent.putExtra("points", points);
-                    context.startActivity(intent);
-                    ((Activity) context).finish();
-
-
+                //launch game over screen
+                paused = true;
+                handler = null;
+                Intent intent = new Intent(context, GameOverActivity.class);
+                intent.putExtra("points", points);
+                context.startActivity(intent);
+                ((Activity) context).finish();
                 wolves.remove(i);
             } else if(wolves.get(i).y >= screenHeight){
                 wolves.remove(i);
