@@ -27,20 +27,19 @@
         android:layout_height="280dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.297"
-        app:srcCompat="@drawable/wolf" />
+        app:layout_constraintVertical_bias="0.086"
+        app:srcCompat="@drawable/wolf2" />
 
     <TextView
-        android:id="@+id/play_again"
+        android:id="@+id/points"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="260dp"
         android:textSize="30dp"
         android:gravity="center"
-        android:text="Play Again"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline3"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,7 +50,7 @@
         android:id="@+id/play_game_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/play_again"
+        app:layout_constraintTop_toBottomOf="@+id/points"
         android:text="Play Again"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

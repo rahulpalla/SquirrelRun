@@ -17,6 +17,9 @@ class GameOverActivity : AppCompatActivity() {
         binding = GameOverBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.playGameBtn.setOnClickListener { launchGame() }
+        val point = listIntent?.getIntExtra("points", 0)
+        binding.points.text = resources.getString(point, "Points:")
+
     }
     private fun launchGame() {
         listIntent = Intent(this, GameActivity::class.java)

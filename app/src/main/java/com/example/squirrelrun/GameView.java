@@ -68,15 +68,15 @@ public class GameView extends View {
         canvas.drawBitmap(background, 0, 0, null);
         canvas.drawText("Points: " + points, 0, TEXT_SIZE, scorePaint);
 
-//        if (!isPlaying) {
-//            //launch game over screen
-//            paused = true;
-//            handler = null;
-//            Intent intent = new Intent(context, GameOverActivity.class);
-//            intent.putExtra("points", points);
-//            context.startActivity(intent);
-//            ((Activity) context).finish();
-//        }
+        if (!isPlaying) {
+            //launch game over screen
+            paused = true;
+            handler = null;
+            Intent intent = new Intent(context, GameOverActivity.class);
+            intent.putExtra("points", points);
+            context.startActivity(intent);
+            ((Activity) context).finish();
+        }
 
         if (wolfFalling == false) {
             Wolf wolf = new Wolf(context, random.nextInt(1200), 0);
@@ -99,6 +99,7 @@ public class GameView extends View {
                     && wolves.get(i).x <= squirrel.x + squirrel.getWidth()
                     && wolves.get(i).y >= squirrel.y
                     && wolves.get(i).y <= screenHeight){
+                isPlaying = false;
 
                     //launch game over screen
                     paused = true;
@@ -106,7 +107,9 @@ public class GameView extends View {
                     Intent intent = new Intent(context, GameOverActivity.class);
                     intent.putExtra("points", points);
                     context.startActivity(intent);
+//                    context.startActivity(intent);
                     ((Activity) context).finish();
+
 
                 wolves.remove(i);
             } else if(wolves.get(i).y >= screenHeight){
