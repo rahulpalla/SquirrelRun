@@ -8,15 +8,15 @@ public class Acorn {
     Bitmap acorn;
     Bitmap scaler;
     Context context;
-    int shx, shy;
+    int x, y;
 
-    public Acorn(Context context, int shx, int shy) {
+    public Acorn(Context context, int otherx, int othery) {
         this.context = context;
         scaler = BitmapFactory.decodeResource(context.getResources(),
                 R.drawable.acorn_img);
         acorn = Bitmap.createScaledBitmap(scaler, 150, 150, false);
-        this.shx = shx;
-        this.shy = shy;
+        this.x = otherx;
+        this.y = othery;
     }
     public Bitmap getShot(){
         return acorn;

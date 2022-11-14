@@ -10,16 +10,16 @@ public class Squirrel {
     Context context;
     Bitmap scaler;
     Bitmap squirrel;
-    int ox, oy;
+    int x, y;
     Random random;
 
     public Squirrel(Context context) {
         this.context = context;
-        scaler = BitmapFactory.decodeResource(context.getResources(), R.drawable.squirrel2);
-        squirrel = Bitmap.createScaledBitmap(scaler, 400, 400, false);
+        scaler = BitmapFactory.decodeResource(context.getResources(), R.drawable.squirrel_img);
+        squirrel = Bitmap.createScaledBitmap(scaler, 300, 300, false);
         random = new Random();
-        ox = random.nextInt(GameView.screenWidth);
-        oy = GameView.screenHeight - squirrel.getHeight();
+        x = random.nextInt(GameView.screenWidth);
+        y = GameView.screenHeight - squirrel.getHeight();
     }
 
     public Bitmap getSquirrel(){

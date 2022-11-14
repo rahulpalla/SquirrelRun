@@ -1,46 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@drawable/background_home"
-    >
+    android:orientation="vertical"
+    android:background="#50C878"
+    android:gravity="center">
 
-
-    <TextView
-        android:id="@+id/app_name"
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/title_btn"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:gravity="center"
-        android:text="@string/squirrel_run"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Squirrel Run"
+        android:fontFamily="@font/sporto"
+        android:textSize="33sp"
+        android:textColor="#ff914d"
+        android:backgroundTint="#000000"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:adjustViewBounds="true"
+        android:maxWidth="100dp"
+        android:maxHeight="100dp"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/squirrel_img" />
 
     <Button
         android:id="@+id/play_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/app_name"
-        android:text="@string/play"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="30dp"/>
+        android:backgroundTint="#000000"
+        android:fontFamily="@font/sporto"
+        android:text="Start"
+        android:textColor="#ff914d"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/setting_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/play_btn"
-        android:text="@string/settings"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="30dp"/>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:text="Settings"
+        android:fontFamily="@font/sporto"
+        android:textSize="20sp"
+        android:textColor="#ff914d"
+        android:backgroundTint="#000000"/>
+    <Button
+        android:id="@+id/voice_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Say your name!"
+        android:fontFamily="@font/sporto"
+        android:textSize="20sp"
+        android:textColor="#ff914d"
+        android:backgroundTint="#000000"/>
+</LinearLayout>
