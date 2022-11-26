@@ -29,10 +29,17 @@ class StartActivity : AppCompatActivity() {
         binding = StartPageBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.startBtn.setOnClickListener { launchGame() }
+        binding.homeBtn.setOnClickListener{launchHome()}
 
         createNotificationChannel()
         sendNotification()
     }
+
+    private fun launchHome(){
+        listIntent = Intent(this, MainActivity::class.java)
+        startActivity(listIntent)
+    }
+
     private fun launchGame() {
         listIntent = Intent(this, GameActivity::class.java)
         startActivity(listIntent)
