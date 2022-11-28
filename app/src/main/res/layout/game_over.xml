@@ -21,7 +21,8 @@
         app:layout_constraintTop_toTopOf="parent"
         android:fontFamily="@font/sporto"
         android:textSize="25sp"
-        android:textColor="#ff914d"/>
+        android:textColor="#ff914d">
+    </TextView>
 
     <ImageView
         android:id="@+id/wolf"
