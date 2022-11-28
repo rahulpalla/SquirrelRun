@@ -14,7 +14,7 @@ public class Acorn {
         this.context = context;
         scaler = BitmapFactory.decodeResource(context.getResources(),
                 R.drawable.acorn_img);
-        acorn = Bitmap.createScaledBitmap(scaler, 150, 150, false);
+        acorn = Bitmap.createScaledBitmap(scaler, (int) (GameView.screenHeight * 0.138), (int) (GameView.screenHeight * 0.138), false);
         this.x = otherx;
         this.y = othery;
     }
