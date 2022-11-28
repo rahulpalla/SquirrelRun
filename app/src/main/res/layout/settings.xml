@@ -9,12 +9,12 @@
     android:background="#50C878"
     android:gravity="center">
     <Button
-        android:id="@+id/setting_title"
+        android:id="@+id/feedback_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Give Us Feedback"
+        android:text="@string/feedback_link"
         android:fontFamily="@font/sporto"
-        android:textSize="31sp"
+        android:textSize="25sp"
         android:textColor="#ff914d"
         android:backgroundTint="#000000"/>
 
@@ -37,14 +37,14 @@
         android:textSize="25sp"
         android:textColor="#ff914d"
         android:backgroundTint="#000000"/>
-    <Button
-        android:id="@+id/feedback_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/feedback_link"
-        android:fontFamily="@font/sporto"
-        android:textSize="25sp"
-        android:textColor="#ff914d"
-        android:backgroundTint="#000000"/>
+<!--    <Button-->
+<!--        android:id="@+id/feedback_button"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/feedback_link"-->
+<!--        android:fontFamily="@font/sporto"-->
+<!--        android:textSize="25sp"-->
+<!--        android:textColor="#ff914d"-->
+<!--        android:backgroundTint="#000000"/>-->
 
 </LinearLayout>

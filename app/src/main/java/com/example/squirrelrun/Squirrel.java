@@ -3,9 +3,11 @@ package com.example.squirrelrun;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.util.DisplayMetrics;
+import android.view.Display;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 
 import java.util.Random;
 
@@ -19,20 +21,10 @@ public class Squirrel {
     public Squirrel(Context context) {
         this.context = context;
         scaler = BitmapFactory.decodeResource(context.getResources(), R.drawable.squirrel_img);
-
-//        DisplayMetrics dm = new DisplayMetrics();`  `
-//        context.getWindowManager().getDefaultDisplay().getMetrics(dm);
-//        float densityScale = dm.density;
-//        float scaledWidth = 300 * densityScale;
-//        float scaledHeight = 300 * densityScale;
-
-//        squirrel = Bitmap.createScaledBitmap(scaler, (int)scaledWidth, (int)scaledHeight, false);
-
-
-        squirrel = Bitmap.createScaledBitmap(scaler, 300, 300, false);
+        squirrel = Bitmap.createScaledBitmap(scaler, (int) (GameView.screenHeight * 0.277), (int) (GameView.screenHeight * 0.277), false);
         random = new Random();
         x = random.nextInt(GameView.screenWidth);
-        y = GameView.screenHeight - squirrel.getHeight();
+        y = (int) (GameView.screenHeight - squirrel.getHeight() - GameView.screenHeight * 0.1);
     }
 
     public Bitmap getSquirrel(){
