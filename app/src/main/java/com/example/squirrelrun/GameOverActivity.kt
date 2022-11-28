@@ -19,7 +19,12 @@ class GameOverActivity : AppCompatActivity() {
         binding.playGameBtn.setOnClickListener { launchGame() }
         binding.homeBtn.setOnClickListener { launchMain() }
         val point = intent.getIntExtra("points", 0)
-        binding.points.text = resources.getString(R.string.points, point)
+        val name = intent.getStringExtra("mic")
+        if (name != null) {
+            binding.points.text = name + " " + resources.getString(R.string.points, point)
+        } else {
+            binding.points.text =  "Nice " + resources.getString(R.string.points, point)
+        }
 
     }
     private fun launchGame() {

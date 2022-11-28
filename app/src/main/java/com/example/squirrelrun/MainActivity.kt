@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var listIntent: Intent
+    private var spokenText: String = "Nice"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,10 +31,12 @@ class MainActivity : AppCompatActivity() {
     }
     private fun launchStart() {
         listIntent = Intent(this, StartActivity::class.java)
+        listIntent.putExtra("mic", spokenText)
         startActivity(listIntent)
     }
     private fun launchSettings() {
         listIntent = Intent(this, SettingsActivity::class.java)
+        listIntent.putExtra("mic", spokenText)
         startActivity(listIntent)
     }
 
@@ -50,12 +53,14 @@ class MainActivity : AppCompatActivity() {
 // This is where you process the intent and extract the speech text from the intent.
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == SPEECH_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
-            val spokenText: String? =
+            spokenText =
                 data?.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS).let { results ->
                     results!![0]
                 }
+
             // Do something with spokenText.
             Toast.makeText(applicationContext, spokenText, Toast.LENGTH_SHORT).show()
+
         }
         super.onActivityResult(requestCode, resultCode, data)
     }

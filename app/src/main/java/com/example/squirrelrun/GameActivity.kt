@@ -27,15 +27,19 @@ class GameActivity : AppCompatActivity() {
         binding.settingsBtn.setOnClickListener { launchSettings() }
         binding.homeBtn.setOnClickListener { launchHome() }
 
-        setContentView(GameView(this))
+        setContentView(GameView(this, intent.getStringExtra("mic")))
     }
 
     private fun launchSettings() {
+        val name = intent.getStringExtra("micInput")
         listIntent = Intent(this, SettingsActivity::class.java)
+        listIntent.putExtra(name, "micInput")
         startActivity(listIntent)
     }
     private fun launchHome() {
+        val name = intent.getStringExtra("mic")
         listIntent = Intent(this, MainActivity::class.java)
+        listIntent.putExtra("mic", name)
         startActivity(listIntent)
     }
 }

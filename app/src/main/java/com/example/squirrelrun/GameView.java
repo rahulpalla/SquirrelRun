@@ -1,6 +1,7 @@
 package com.example.squirrelrun;
 
 import android.app.Activity;
+import android.app.Notification;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -9,6 +10,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Point;
+import android.graphics.Typeface;
 import android.os.Handler;
 import android.view.Display;
 import android.view.MotionEvent;
@@ -33,6 +35,7 @@ public class GameView extends View {
     ArrayList<Wolf> wolves;
     boolean wolfFalling = false;
     boolean acornFalling = false;
+    String name = "";
 
     final Runnable runnable = new Runnable() {
         @Override
@@ -42,9 +45,10 @@ public class GameView extends View {
     };
 
 
-    public GameView(Context context) {
+    public GameView(Context context, String name) {
         super(context);
         this.context = context;
+        this.name = name;
         Display display = ((Activity) getContext()).getWindowManager().getDefaultDisplay();
         Point size = new Point();
         display.getSize(size);
@@ -60,6 +64,9 @@ public class GameView extends View {
         scorePaint.setColor(Color.BLACK);
         scorePaint.setTextSize(TEXT_SIZE);
         scorePaint.setTextAlign(Paint.Align.LEFT);
+        scorePaint.setTypeface(Typeface.create("Arial",Typeface.BOLD));
+//        Typeface plain = Typeface.createFromAsset(context.getAssets(), );
+//        scorePaint.setTypeface(plain);
 
     }
 
@@ -74,6 +81,7 @@ public class GameView extends View {
             handler = null;
             Intent intent = new Intent(context, GameOverActivity.class);
             intent.putExtra("points", points);
+            intent.putExtra("mic", name);
             context.startActivity(intent);
             ((Activity) context).finish();
         }
@@ -106,6 +114,7 @@ public class GameView extends View {
                 handler = null;
                 Intent intent = new Intent(context, GameOverActivity.class);
                 intent.putExtra("points", points);
+                intent.putExtra("mic", name);
                 context.startActivity(intent);
                 ((Activity) context).finish();
                 wolves.remove(i);

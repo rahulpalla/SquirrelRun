@@ -29,12 +29,23 @@ class StartActivity : AppCompatActivity() {
         binding = StartPageBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.startBtn.setOnClickListener { launchGame() }
+        binding.homeBtn.setOnClickListener{launchHome()}
 
         createNotificationChannel()
         sendNotification()
     }
+
+    private fun launchHome(){
+        val name = intent.getStringExtra("mic")
+        listIntent = Intent(this, MainActivity::class.java)
+        listIntent.putExtra("mic", name)
+        startActivity(listIntent)
+    }
+
     private fun launchGame() {
+        val name = intent.getStringExtra("mic")
         listIntent = Intent(this, GameActivity::class.java)
+        listIntent.putExtra("mic", name)
         startActivity(listIntent)
     }
 
@@ -62,7 +73,7 @@ class StartActivity : AppCompatActivity() {
             flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         }
         val pendingIntent: PendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_IMMUTABLE)
-        val bitmap : Bitmap = BitmapFactory.decodeResource(applicationContext.resources, R.drawable.squirrel2)
+        val bitmap : Bitmap = BitmapFactory.decodeResource(applicationContext.resources, R.drawable.squirrel_img)
         val builder = NotificationCompat.Builder(this, CHANNEL_ID)
             .setSmallIcon(R.drawable.acorn_img)
             .setContentTitle("REFER YOUR FRIENDS")
