@@ -29,11 +29,17 @@ class SettingsActivity : AppCompatActivity() {
         startActivity(webIntent)
     }
     private fun launchStart() {
+        val name = intent.getStringExtra("mic")
         listIntent = Intent(this, StartActivity::class.java)
+        listIntent.putExtra("mic", name)
+
         startActivity(listIntent)
     }
     private fun launchHome() {
+        val name = intent.getStringExtra("mic")
         listIntent = Intent(this, MainActivity::class.java)
+        listIntent.putExtra("mic", name)
+
         startActivity(listIntent)
     }
 }
