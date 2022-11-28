@@ -8,6 +8,7 @@ import android.view.Display;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+
 import java.util.Random;
 
 public class Squirrel {
