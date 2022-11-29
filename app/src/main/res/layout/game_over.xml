@@ -20,14 +20,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:fontFamily="@font/sporto"
-        android:textSize="25sp"
+        android:textSize="18sp"
         android:textColor="#ff914d">
     </TextView>
 
     <ImageView
         android:id="@+id/wolf"
         android:layout_width="200dp"
-        android:layout_height="280dp"
+        android:layout_height="268dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.499"
@@ -41,7 +41,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="-80dp"
-        android:textSize="30dp"
+        android:textSize="22dp"
         android:text="@string/points"
         android:gravity="center"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline3"
@@ -61,7 +61,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:gravity="center"
         android:fontFamily="@font/sporto"
-        android:textSize="25sp"
+        android:textSize="18sp"
         android:textColor="#ff914d"
         android:backgroundTint="#000000"/>
 
@@ -71,7 +71,8 @@
         android:layout_height="wrap_content"
         android:text="Home"
         android:fontFamily="@font/sporto"
-        android:textSize="25sp"
+        android:textSize="18sp"
+        android:layout_marginTop="-10dp"
         android:textColor="#ff914d"
         android:backgroundTint="#000000"
         app:layout_constraintTop_toBottomOf="@+id/play_game_btn"
