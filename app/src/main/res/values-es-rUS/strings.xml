@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="points">¡Obtuviste %1$d puntos!</string>
+    <string name="start">Comienzo</string>
+    <string name="feedback">Retroalimentación</string>
+    <string name="sayName">¡Di tu nombre!</string>
+    <string name="gameOver">JUEGO TERMINADO</string>
+    <string name="playAgain">"Juega de nuevo "</string>
+    <string name="howToPlay">Cómo se juega: Mueve la ardilla para recolectar bellotas y evita a los temibles lobos.</string>
+    <string name="startGame">Empezar juego</string>
+    <string name="home">Hogar</string>
+    <string name="settings">Ajustes</string>
+</resources>

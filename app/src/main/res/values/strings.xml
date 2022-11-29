@@ -1,15 +1,15 @@
 <resources>
-    <string name="app_name">SquirrelRun</string>
-    <string name="feedback_link"><a href='https://docs.google.com/forms/d/e/1FAIpQLScvEchFvcV3nsaqBkX5kmHwAz1ZNGmEJlh5lOoZZ8eqr4F3PA/viewform?usp=sf_link
+    <string name="app_name" translatable="false">SquirrelRun</string>
+    <string name="feedback_link" translatable="false"><a href='https://docs.google.com/forms/d/e/1FAIpQLScvEchFvcV3nsaqBkX5kmHwAz1ZNGmEJlh5lOoZZ8eqr4F3PA/viewform?usp=sf_link
 '>FeedBack</a></string>
     <string name="points">you got %1$d points!</string>
-    <string name="start">Start</string>
-    <string name="feedback">Feedback</string>
-    <string name="sayName">Say your name!</string>
-    <string name="gameOver">GAME OVER</string>
-    <string name="playAgain">Play Again</string>
-    <string name="home">Home</string>
+    <string name="feedback" translatable="true">Feedback</string>
+    <string name="sayName" translatable="true">Say your name!</string>
+    <string name="gameOver" translatable="true">GAME OVER</string>
+    <string name="playAgain" translatable="true">Play Again</string>
+    <string name="home" translatable="true">Home</string>
     <string name="settings">Settings</string>
-    <string name="howToPlay">How to Play: Move the squirrel to collect acorns and avoid the scary wolves.</string>
+    <string name="howToPlay" translatable="true">How to Play: Move the squirrel to collect acorns and avoid the scary wolves.</string>
     <string name="startGame">Start Game</string>
+    <string name="start">Start</string>
 </resources>
